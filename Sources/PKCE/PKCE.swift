@@ -2,8 +2,10 @@ import Security
 import Foundation
 import CryptoKit
 
-let BITS_IN_CHAR = 6
-let BITS_IN_OCTET = 8
+let bitsInChar = 6
+let bitsInOctet = 8
+let minCodeVerifierLength = 43
+let maxCodeVerifierLength = 128
 
 public struct PKCE {
 
@@ -14,10 +16,10 @@ public struct PKCE {
     /// - Parameter length: The number of characters for the code verifier. The code verifier must have a minimum of 43 characters and a maximum of 128 characters.
     /// - Returns: The generated code verifier.
     public static func generateCodeVerifier(length: Int = 128) throws -> String {
-        if length < 43 || length > 128 {
+        if length < minCodeVerifierLength || length > maxCodeVerifierLength {
             throw PKCEError.invalidCodeVerifierLength
         }
-        let octetCount = length * BITS_IN_CHAR / BITS_IN_OCTET
+        let octetCount = length * bitsInChar / bitsInOctet
         let octets = try generateRandomOctets(octetCount: octetCount)
         return encodeBase64URLString(octets: octets)
     }
