@@ -22,7 +22,7 @@ public struct PKCE {
     
     @available(iOS 13.0, *)
     /// Generates a code challenge for a given code verifier.
-    /// - Parameter codeVerifier: The code verifier for which to generate a code challenge
+    /// - Parameter codeVerifier: The code verifier for which to generate a code challenge.
     /// - Returns: The generated code challenge.
     public static func generateCodeChallenge(for codeVerifier: String) throws -> String {
         let challenge = codeVerifier
@@ -36,6 +36,10 @@ public struct PKCE {
         }
     }
     
+    
+    /// Generates a specified number of random octets.
+    /// - Parameter octetCount: The number of octets to generate.
+    /// - Returns: The randomly generated octets.
     private static func generateRandomOctets(octetCount: Int) throws -> [UInt8] {
         var octets = [UInt8](repeating: 0, count: octetCount)
         let status = SecRandomCopyBytes(kSecRandomDefault, octets.count, &octets)
@@ -46,6 +50,10 @@ public struct PKCE {
         }
     }
     
+    
+    /// Encodes a sequence of octets as a Base64 URL string.
+    /// - Parameter octets: The octets to be encoded.
+    /// - Returns: The Base64 URL-encoded string.
     private static func encodeBase64URLString<S>(octets: S) -> String where S: Sequence, UInt8 == S.Element {
         let data = Data(octets)
             return data
