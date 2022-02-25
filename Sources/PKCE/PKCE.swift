@@ -29,11 +29,10 @@ public struct PKCE {
             .data(using: .ascii)
             .map { SHA256.hash(data: $0) }
             .map { encodeBase64URLString(octets: $0) }
-        if let challenge = challenge {
-            return challenge
-        } else {
+        guard let challenge = challenge else {
             throw PKCEError.failedToCreateCodeChallengeChallenge
         }
+        return challenge
     }
     
     
@@ -43,11 +42,10 @@ public struct PKCE {
     private static func generateRandomOctets(octetCount: Int) throws -> [UInt8] {
         var octets = [UInt8](repeating: 0, count: octetCount)
         let status = SecRandomCopyBytes(kSecRandomDefault, octets.count, &octets)
-        if status == errSecSuccess {
-            return octets
-        } else {
+        if status != errSecSuccess {
             throw PKCEError.failedToGenerateRandomOctets
         }
+        return octets
     }
     
     
