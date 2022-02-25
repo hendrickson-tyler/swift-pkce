@@ -20,7 +20,6 @@ public struct PKCE {
     }
     
     
-    @available(iOS 13.0, *)
     /// Generates a code challenge for a given code verifier.
     /// - Parameter codeVerifier: The code verifier for which to generate a code challenge.
     /// - Returns: The generated code challenge.
