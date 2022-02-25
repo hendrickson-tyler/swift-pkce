@@ -14,6 +14,9 @@ public struct PKCE {
     /// - Parameter length: The number of characters for the code verifier. The code verifier must have a minimum of 43 characters and a maximum of 128 characters.
     /// - Returns: The generated code verifier.
     public static func generateCodeVerifier(length: Int = 128) throws -> String {
+        if length < 43 || length > 128 {
+            throw PKCEError.invalidCodeVerifierLength
+        }
         let octetCount = length * BITS_IN_CHAR / BITS_IN_OCTET
         let octets = try generateRandomOctets(octetCount: octetCount)
         return encodeBase64URLString(octets: octets)
@@ -63,7 +66,9 @@ public struct PKCE {
 }
 
 /// Errors that can occur when generating values for PKCE.
-private enum PKCEError: Error {
+public enum PKCEError: Error {
+    /// Requested an invalid code verifier. The requested code verifier length is not within the range of 43 to 128.
+    case invalidCodeVerifierLength
     /// An error occured when trying to generate the random octets for the code verifier.
     case failedToGenerateRandomOctets
     /// An error occured when trying to genereate the code challenge for a given code verifier.
