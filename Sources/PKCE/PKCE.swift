@@ -18,7 +18,7 @@ public enum PKCEError: Error {
 }
     
 /// Generates a new, random code verifier.
-/// - Parameter length: The number of characters for the code verifier. The code verifier must have a minimum of 43 characters and a maximum of 128 characters.
+/// - Parameter length: The number of characters for the code verifier. The code verifier must have a minimum of 43 characters and a maximum of 128 characters. If omitted, it will be defaulted to the maximum length of `128`.
 /// - Returns: The generated code verifier.
 public func generateCodeVerifier(length: Int = 128) throws -> String {
     if length < minCodeVerifierLength || length > maxCodeVerifierLength {
