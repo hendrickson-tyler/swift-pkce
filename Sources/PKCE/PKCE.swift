@@ -1,5 +1,6 @@
 import Security
 import Foundation
+import CryptoKit
 
 let BITS_IN_CHAR = 6
 let BITS_IN_OCTET = 8
@@ -16,6 +17,23 @@ public struct PKCE {
         let octetCount = length * BITS_IN_CHAR / BITS_IN_OCTET
         let octets = try generateRandomOctets(octetCount: octetCount)
         return encodeBase64URLString(octets: octets)
+    }
+    
+    
+    @available(iOS 13.0, *)
+    /// Generates a code challenge for a given code verifier.
+    /// - Parameter codeVerifier: The code verifier for which to generate a code challenge
+    /// - Returns: The generated code challenge.
+    public static func generateCodeChallenge(for codeVerifier: String) throws -> String {
+        let challenge = codeVerifier
+            .data(using: .ascii) // Decode back to [UInt8] -> Data?
+            .map { SHA256.hash(data: $0) } // Hash -> SHA256.Digest?
+            .map { encodeBase64URLString(octets: $0) } // base64URLEncode
+        if let challenge = challenge {
+            return challenge
+        } else {
+            throw PKCEError.failedToCreateCodeChallengeChallenge
+        }
     }
     
     private static func generateRandomOctets(octetCount: Int) throws -> [UInt8] {
@@ -43,4 +61,6 @@ public struct PKCE {
 private enum PKCEError: Error {
     /// An error occured when trying to generate the random octets for the code verifier.
     case failedToGenerateRandomOctets
+    /// An error occured when trying to genereate the code challenge for a given code verifier.
+    case failedToCreateCodeChallengeChallenge
 }
