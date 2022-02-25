@@ -1,2 +1,3 @@
 # swift-pkce
-Common PKCE implementation for OAuth 2.0
+
+A description of this package.
