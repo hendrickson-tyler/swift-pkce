@@ -8,9 +8,6 @@ let minCodeVerifierLength = 43
 let maxCodeVerifierLength = 128
 
 public struct PKCE {
-
-    public init() {
-    }
     
     /// Generates a new, random code verifier.
     /// - Parameter length: The number of characters for the code verifier. The code verifier must have a minimum of 43 characters and a maximum of 128 characters.
