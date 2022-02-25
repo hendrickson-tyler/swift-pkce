@@ -1,4 +1,4 @@
-public struct swift_pkce {
+public struct PKCE {
     public private(set) var text = "Hello, World!"
 
     public init() {
