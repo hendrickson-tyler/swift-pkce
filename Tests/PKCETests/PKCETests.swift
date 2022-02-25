@@ -2,10 +2,12 @@ import XCTest
 @testable import PKCE
 
 final class PKCETests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(PKCE().text, "Hello, World!")
+    
+    func testCodeVerifierLength() throws {
+        var codeVerifier = try PKCE().generateCodeVerifier(length: 43)
+        XCTAssertEqual(codeVerifier.count, 43)
+        codeVerifier = try PKCE().generateCodeVerifier(length: 128)
+        XCTAssertEqual(codeVerifier.count, 128)
     }
+    
 }
