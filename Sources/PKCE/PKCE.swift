@@ -26,9 +26,9 @@ public struct PKCE {
     /// - Returns: The generated code challenge.
     public static func generateCodeChallenge(for codeVerifier: String) throws -> String {
         let challenge = codeVerifier
-            .data(using: .ascii) // Decode back to [UInt8] -> Data?
-            .map { SHA256.hash(data: $0) } // Hash -> SHA256.Digest?
-            .map { encodeBase64URLString(octets: $0) } // base64URLEncode
+            .data(using: .ascii)
+            .map { SHA256.hash(data: $0) }
+            .map { encodeBase64URLString(octets: $0) }
         if let challenge = challenge {
             return challenge
         } else {
@@ -49,10 +49,10 @@ public struct PKCE {
     private static func encodeBase64URLString<S>(octets: S) -> String where S: Sequence, UInt8 == S.Element {
         let data = Data(octets)
             return data
-                .base64EncodedString() // Regular base64 encoder
-                .replacingOccurrences(of: "=", with: "") // Remove any trailing '='s
-                .replacingOccurrences(of: "+", with: "-") // 62nd char of encoding
-                .replacingOccurrences(of: "/", with: "_") // 63rd char of encoding
+                .base64EncodedString()
+                .replacingOccurrences(of: "=", with: "")
+                .replacingOccurrences(of: "+", with: "-")
+                .replacingOccurrences(of: "/", with: "_")
                 .trimmingCharacters(in: .whitespaces)
     }
 }
