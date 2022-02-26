@@ -2,25 +2,28 @@ name: Checks
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Lint
+        uses: norio-nomura/action-swiftlint@3.2.1
+
   build:
-
     runs-on: macos-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: swift build -v
-      
+      - uses: actions/checkout@v2
+      - name: Build
+        run: swift build -v
+
   test:
-
     runs-on: macos-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Run tests
-      run: swift test -v
+      - uses: actions/checkout@v2
+      - name: Run tests
+        run: swift test -v
