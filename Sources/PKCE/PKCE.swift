@@ -16,9 +16,10 @@ public enum PKCEError: Error {
     /// An error occured when trying to genereate the code challenge for a given code verifier.
     case failedToCreateCodeChallengeChallenge
 }
-    
+
 /// Generates a new, random code verifier.
-/// - Parameter length: The number of characters for the code verifier. The code verifier must have a minimum of 43 characters and a maximum of 128 characters. If omitted, it will be defaulted to the maximum length of `128`.
+/// - Parameter length: The number of characters for the code verifier. The code verifier must have a minimum of 43
+/// characters and a maximum of 128 characters. If omitted, it will be defaulted to the maximum length of `128`.
 /// - Returns: The generated code verifier.
 public func generateCodeVerifier(length: Int = 128) throws -> String {
     if length < minCodeVerifierLength || length > maxCodeVerifierLength {
