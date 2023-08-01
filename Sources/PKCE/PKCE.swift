@@ -11,9 +11,9 @@ let maxCodeVerifierLength = 128
 public enum PKCEError: Error {
     /// Requested an invalid code verifier. The requested code verifier length is not within the range of 43 to 128.
     case invalidCodeVerifierLength
-    /// An error occured when trying to generate the random octets for the code verifier.
+    /// An error occurred when trying to generate the random octets for the code verifier.
     case failedToGenerateRandomOctets
-    /// An error occured when trying to genereate the code challenge for a given code verifier.
+    /// An error occurred when trying to generate the code challenge for a given code verifier.
     case failedToCreateCodeChallengeChallenge
 }
 
