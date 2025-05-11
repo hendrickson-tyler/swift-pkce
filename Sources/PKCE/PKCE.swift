@@ -14,7 +14,7 @@ public enum PKCEError: Error {
     /// An error occurred when trying to generate the random octets for the code verifier.
     case failedToGenerateRandomOctets
     /// An error occurred when trying to generate the code challenge for a given code verifier.
-    case failedToCreateCodeChallengeChallenge
+    case failedToCreateCodeChallenge
 }
 
 /// Generates a new, random code verifier.
@@ -39,7 +39,7 @@ public func generateCodeChallenge(for codeVerifier: String) throws -> String {
         .map { SHA256.hash(data: $0) }
         .map { encodeBase64URLString(octets: $0) }
     guard let challenge = challenge else {
-        throw PKCEError.failedToCreateCodeChallengeChallenge
+        throw PKCEError.failedToCreateCodeChallenge
     }
     return challenge
 }
