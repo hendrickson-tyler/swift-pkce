@@ -6,24 +6,25 @@ on:
       - main
 
 jobs:
+  # Uses sematic-release to create release notes
   release:
     name: Release
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Determine version
-        id: semver
-        uses: ietf-tools/semver-action@v1
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          token: ${{ github.token }}
-          branch: main
-
-      - name: Create Release
-        uses: ncipollo/release-action@v1
+          fetch-depth: 0 # Get all history for tags
+      - uses: actions/setup-node@v4
         with:
-          allowUpdates: true
-          draft: true
-          name: ${{ steps.semver.outputs.next }}
-          body: Changelog Contents
-          token: ${{ github.token }}
+          node-version: 'lts/*'
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_PAT }}
+        run: >
+          npx -p semantic-release
+              -p @semantic-release/github
+              -p @semantic-release/release-notes-generator
+              -p conventional-changelog-conventionalcommits
+              semantic-release
