@@ -22,9 +22,4 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_PAT }}
-        run: >
-          npx -p semantic-release
-              -p @semantic-release/github
-              -p @semantic-release/release-notes-generator
-              -p conventional-changelog-conventionalcommits
-              semantic-release
+        run: npx -p semantic-release -p @semantic-release/github -p @semantic-release/release-notes-generator -p conventional-changelog-conventionalcommits semantic-release
