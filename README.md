@@ -39,4 +39,4 @@ func generateCodeChallenge(for: String) throws -> String
 
 ## Attribution
 
-The original code for Swift PKCE was sourced from a [Bootstragram blog post](https://bootstragram.com/blog/oauth-pkce-swift-secure-code-verifiers-and-code-challenges/) written by [@dirtyhenry](https://github.com/dirtyhenry) and updated slightly.
+The original code for Swift PKCE was sourced from a [blog post](https://www.mickf.net/tech/oauth-pkce-swift-secure-code-verifiers-and-code-challenges/) written by [@dirtyhenry](https://github.com/dirtyhenry) and updated slightly.
