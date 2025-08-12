@@ -9,10 +9,14 @@ updates:
   - package-ecosystem: 'swift'
     directory: '/'
     schedule:
-      interval: "daily"
+      interval: 'daily'
+      time: '23:00'
+      timezone: 'US/Mountain'
 
   # GitHub Actions
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
       interval: 'daily'
+      time: '23:00'
+      timezone: 'US/Mountain'
