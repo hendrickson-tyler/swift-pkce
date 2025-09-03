@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/krzyzanowskim/CryptoSwift.git",
         "state": {
           "branch": null,
-          "revision": "729e01bc9b9dab466ac85f21fb9ee2bc1c61b258",
-          "version": "1.8.4"
+          "revision": "e45a26384239e028ec87fbcc788f513b67e10d8f",
+          "version": "1.9.0"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/jpsim/SourceKitten.git",
         "state": {
           "branch": null,
-          "revision": "eb6656ed26bdef967ad8d07c27e2eab34dc582f2",
-          "version": "0.37.0"
+          "revision": "731ffe6a35344a19bab00cdca1c952d5b4fee4d8",
+          "version": "0.37.2"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/apple/swift-argument-parser.git",
         "state": {
           "branch": null,
-          "revision": "fee6933f37fde9a5e12a1e4aeaa93fe60116ff2a",
-          "version": "1.2.2"
+          "revision": "309a47b2b1d9b5e991f36961c983ecec72275be3",
+          "version": "1.6.1"
         }
       },
       {
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/swiftlang/swift-syntax.git",
         "state": {
           "branch": null,
-          "revision": "1103c45ece4f7fe160b8f75b4ea1ee2e5fac1841",
-          "version": "601.0.0"
+          "revision": "21b3b45635decd1a0b89968f81b6d9a93128f773",
+          "version": "602.0.0-prerelease-2025-08-11"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/Realm/SwiftLint",
         "state": {
           "branch": null,
-          "revision": "625792423014cc49b0a1e5a1a5c0d6b8b3de10f9",
-          "version": "0.59.1"
+          "revision": "a351a0dea2ccf0fc1925620118821dd6d3ef55c4",
+          "version": "0.60.0"
         }
       },
       {
@@ -78,8 +78,8 @@
         "repositoryURL": "https://github.com/jpsim/Yams.git",
         "state": {
           "branch": null,
-          "revision": "b4b8042411dc7bbb696300a34a4bf3ba1b7ad19b",
-          "version": "5.3.1"
+          "revision": "d41ba4e7164c0838c6d48351f7575f7f762151fe",
+          "version": "6.1.0"
         }
       }
     ]
