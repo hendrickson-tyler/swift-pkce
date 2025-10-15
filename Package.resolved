@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/swiftlang/swift-syntax.git",
         "state": {
           "branch": null,
-          "revision": "21b3b45635decd1a0b89968f81b6d9a93128f773",
-          "version": "602.0.0-prerelease-2025-08-11"
+          "revision": "6673b05995983461eef015c4768f1483c245db22",
+          "version": "603.0.0-prerelease-2025-09-15"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/Realm/SwiftLint",
         "state": {
           "branch": null,
-          "revision": "cc6fbaf355caf9ebe02c1b631a8edaa6df9145c5",
-          "version": "0.61.0"
+          "revision": "57dba9819eb3e2b25daf71a06eb414fda7e43078",
+          "version": "0.62.1"
         }
       },
       {
