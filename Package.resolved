@@ -38,12 +38,21 @@
         }
       },
       {
+        "package": "swift-filename-matcher",
+        "repositoryURL": "https://github.com/ileitch/swift-filename-matcher",
+        "state": {
+          "branch": null,
+          "revision": "eef5ac0b6b3cdc64b3039b037bed2def8a1edaeb",
+          "version": "2.0.1"
+        }
+      },
+      {
         "package": "swift-syntax",
         "repositoryURL": "https://github.com/swiftlang/swift-syntax.git",
         "state": {
           "branch": null,
-          "revision": "6673b05995983461eef015c4768f1483c245db22",
-          "version": "603.0.0-prerelease-2025-09-15"
+          "revision": "15bf440e9a1e105996ae66a1446e91ffe0b3f8e9",
+          "version": "604.0.0-prerelease-2025-12-15"
         }
       },
       {
@@ -51,8 +60,8 @@
         "repositoryURL": "https://github.com/Realm/SwiftLint",
         "state": {
           "branch": null,
-          "revision": "da9d742874d88f6d5d0f7b315d1fcf12655f2311",
-          "version": "0.62.2"
+          "revision": "e294d77dd198133c5a5cdd74e7715aa3b86dda2f",
+          "version": "0.63.0"
         }
       },
       {
