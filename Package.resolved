@@ -60,8 +60,8 @@
         "repositoryURL": "https://github.com/Realm/SwiftLint",
         "state": {
           "branch": null,
-          "revision": "e294d77dd198133c5a5cdd74e7715aa3b86dda2f",
-          "version": "0.63.0"
+          "revision": "9120756b6e20e483c35433c41a4c4a9d32fc898b",
+          "version": "0.63.1"
         }
       },
       {
